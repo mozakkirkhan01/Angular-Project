@@ -1,3 +1,6 @@
+*{
+    background-color: beige;
+}
 .quote-box {
   text-align: center;
   margin-top: 100px;
@@ -6,6 +9,10 @@
 
 h2 {
   color: #333;
+  margin-bottom: 20px;
+}
+h2:hover{
+  color: #5f4f4f;
   margin-bottom: 20px;
 }
 
@@ -19,5 +26,34 @@ button {
 }
 
 button:hover {
-  background-color: #135ba1;
+  background-color: #2fa113;
+}
+
+.quote-box {
+  text-align: center;
+  margin-top: 100px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  color: #222;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  display: inline-block;
+  max-width: 600px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }

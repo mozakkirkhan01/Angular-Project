@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-quote',
@@ -15,4 +17,25 @@ export class QuoteComponent {
       const randomIndex = Math.floor(Math.random() * this.qotes.length);
       this.currentQote = this.qotes[randomIndex];
     }
+
+    // Cat fact ninja api
+
+    currFact : string = "Click the button to get a cat fact!";
+    apiURL = 'https://catfact.ninja/fact';
+
+    constructor(private http: HttpClient) {}
+
+    getCatFact() {
+      this.http.get<{ fact:string }>(this.apiURL).subscribe({
+        next: (response) =>{
+          this.currFact = response.fact;
+        },
+        error: (err) => {
+          this.currFact = "Oops! Couldn't fetch a cat fact 😺";
+          console.log(err);
+          
+        }
+      });
+    }
+
 }
